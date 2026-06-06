@@ -3,15 +3,51 @@ import { contactDetails, translations } from '../data';
 
 const { TextArea } = Input;
 
-const locations = ['Bengaluru', 'Sirsi', 'Siddapur', 'Kumta', 'Honnavar', 'Karwar', 'Yellapur', 'Hubli','Sagar','Shivamogga'];
+const locations = ['Bengaluru', 'Sirsi', 'Siddapur', 'Kumta', 'Honnavar', 'Karwar', 'Yellapur', 'Hubli', 'Sagar', 'Shivamogga'];
 
 const ContactForm = ({ locale }) => {
   const [form] = Form.useForm();
   const t = translations[locale];
 
-  const onFinish = () => {
-    message.success('Thank you! Your enquiry has been received. We will contact you shortly.');
-    form.resetFields();
+  const onFinish = async (values) => {
+    try {
+      // Bot detected
+      if (values.botcheck) {
+        return;
+      }
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: "ec2596df-fcc9-4d40-91b0-759f07ef1236",
+            subject: "New Website Enquiry - Sirantara Smart Solutions",
+            ...values,
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        message.success(
+          "Thank you! Your enquiry has been received."
+        );
+        form.resetFields();
+      } else {
+        message.error(
+          "Unable to submit enquiry. Please try again."
+        );
+      }
+    } catch (error) {
+      message.error(
+        "Unable to submit enquiry. Please try again."
+      );
+    }
   };
 
   return (
@@ -42,6 +78,12 @@ const ContactForm = ({ locale }) => {
               <Select.Option value={item} key={item}>{item}</Select.Option>
             ))}
           </Select>
+        </Form.Item>
+        <Form.Item
+          name="botcheck"
+          style={{ display: "none" }}
+        >
+          <Input />
         </Form.Item>
         <Form.Item name="requirement" label={t.form.requirement} rules={[{ required: true, message: t.form.validation.requirement }]}>
           <TextArea rows={4} placeholder={t.form.placeholderRequirement} />

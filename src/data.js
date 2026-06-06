@@ -89,8 +89,8 @@ export const portfolioProjects = [
 
 export const faqs = [
   {
-    question: 'Do you install systems in resorts outside Sirsi?',
-    answer: 'Yes. We support resorts, villas and commercial projects across Uttara Kannada, Hubli and coastal Karnataka.',
+    question: 'Do you install systems in resorts outside Bengaluru?',
+    answer: 'Yes. We support resorts, villas and commercial projects across Bengaluru, Uttara Kannada, Shivamogga, Hubli and coastal Karnataka.',
   },
   {
     question: 'Can I control the system from my phone?',
@@ -109,7 +109,7 @@ export const blogSamples = [
 ];
 
 export const contactDetails = {
-  phone: '+91 98765 43210',
+  phone: '+9196326 20473',
   whatsapp: 'https://wa.me/919632620473',
   email: 'smartsirantara@gmail.com',
 };
@@ -165,7 +165,7 @@ export const translations = {
       requirement: 'Requirement',
       submit: 'Submit Enquiry',
       placeholderName: 'Your full name',
-      placeholderPhone: '+91 98765 43210',
+      placeholderPhone: '+9196326 20473',
       placeholderEmail: 'you@example.com',
       placeholderLocation: 'Select your city or area',
       placeholderRequirement: 'Describe your project or requirements',
@@ -278,7 +278,7 @@ export const translations = {
       requirement: 'ಅಗತ್ಯತೆ',
       submit: 'ವಿಚಾರಣೆ ಸಲ್ಲಿಸಿ',
       placeholderName: 'ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಹೆಸರು',
-      placeholderPhone: '+91 98765 43210',
+      placeholderPhone: '+9196326 20473',
       placeholderEmail: 'you@example.com',
       placeholderLocation: 'ನಿಮ್ಮ ನಗರ ಅಥವಾ ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
       placeholderRequirement: 'ನಿಮ್ಮ ಯೋಜನೆ ಅಥವಾ ಅಗತ್ಯಗಳನ್ನು ವರ್ಣಿಸಿ',
