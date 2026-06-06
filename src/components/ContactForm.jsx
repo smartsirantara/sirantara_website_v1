@@ -3,7 +3,7 @@ import { contactDetails, translations } from '../data';
 
 const { TextArea } = Input;
 
-const locations = ['Sirsi', 'Siddapur', 'Kumta', 'Honnavar', 'Karwar', 'Yellapur', 'Hubli'];
+const locations = ['Bengaluru', 'Sirsi', 'Siddapur', 'Kumta', 'Honnavar', 'Karwar', 'Yellapur', 'Hubli','Sagar','Shivamogga'];
 
 const ContactForm = ({ locale }) => {
   const [form] = Form.useForm();
