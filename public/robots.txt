@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Update the URL below to your actual deployed domain.
+Sitemap: https://v1.smartsirantara.workers.dev/sitemap.xml
+Host: https://v1.smartsirantara.workers.dev
