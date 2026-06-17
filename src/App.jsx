@@ -53,6 +53,14 @@ const App = () => {
     document.title = `${currentTitle} | Sirantara Smart Solutions`;
   }, [location.pathname, t]);
 
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('event', 'page_view', {
+        page_path: location.pathname,
+      });
+    }
+  }, [location.pathname]);
+
   const toggleLocale = () => {
     setLocale((current) => (current === 'en' ? 'kn' : 'en'));
   };
